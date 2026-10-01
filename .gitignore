@@ -1,0 +1,41 @@
+# Credentials and machine-local configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+credentials*.json
+CLAUDE.local.md
+.claude/settings.local.json
+.mcp.json
+.codex/
+
+# Raw intake is private by default. Distilled requirements need their own review.
+private/
+.agent/scratch/
+.agent/logs/
+.seed-ci-artifacts/
+.seed-local/
+
+# Tooling/build outputs
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+dist/
+build/
+.next/
+coverage/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+
+# Machine-local MCP client configuration
+.cursor/mcp.json
+
+# Additional local client and tooling state
+.claude.json
+.mypy_cache/

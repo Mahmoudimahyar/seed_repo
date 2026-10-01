@@ -1,0 +1,76 @@
+{
+  "release": "0.4.0-rc.1",
+  "recorded_at_utc": "2026-09-22T03:12:11.598986+00:00",
+  "baseline_tests": {
+    "version": "0.3.1-rc.1",
+    "count": 370,
+    "result": "PASS"
+  },
+  "updated_tests": {
+    "count": 445,
+    "result": "PASS",
+    "additional": 75,
+    "evidence": "local-unit-tests.txt"
+  },
+  "external_cli": {
+    "count": 39,
+    "result": "PASS",
+    "evidence": "external-cli-checks.json"
+  },
+  "local_runtime": {
+    "json": 54,
+    "yaml": 6,
+    "schemas": 14,
+    "python_syntax": 56,
+    "graphifyy_installed": null,
+    "mcp_installed": null,
+    "opensrc_executable": null,
+    "python": "3.13.5",
+    "platform": "Linux",
+    "git": "git version 2.47.3",
+    "node": "v22.16.0"
+  },
+  "provider_acceptance": {
+    "graphify": {
+      "status": "BLOCKED",
+      "provider": "graphify",
+      "reason": "FAIL: optional provider command did not succeed (2); output withheld"
+    },
+    "opensrc": {
+      "status": "BLOCKED",
+      "provider": "opensrc",
+      "reason": "BLOCKED: optional provider executable is not available; no installation attempted"
+    },
+    "network_not_authorized": {
+      "status": "BLOCKED",
+      "provider": "opensrc",
+      "reason": "Public registry/repository access requires --allow-network"
+    },
+    "mcp": {
+      "status": "BLOCKED",
+      "reason": "Official MCP SDK not installed"
+    }
+  },
+  "test_boundary": [
+    "Actual local Git archive, source verification and restoration on disposable fixtures.",
+    "Actual local CLI/subprocess/worker execution; synthetic provider protocol doubles are labeled in tests.",
+    "No installed upstream opensrc/Graphify execution, live MCP/native client, hosted CI, Windows/macOS or live performance comparison."
+  ],
+  "benchmark": {
+    "status": "NOT_RUN",
+    "definition": "evals/reuse/scenarios.json",
+    "performance_claim": null
+  },
+  "authority": "Local hashes, reviewed names and fixtures are not authenticated approvals or publisher attestations.",
+  "final_static_inventory": {
+    "json": 56,
+    "yaml": 6,
+    "schemas": 14,
+    "python_syntax": 56,
+    "manifest_inventory_files": 264
+  },
+  "local_technical_ci": {
+    "status": "PASS",
+    "evidence": "local-command-runner.json"
+  }
+}

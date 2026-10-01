@@ -1,0 +1,320 @@
+{
+  "release": "0.4.0-rc.1",
+  "scope": "Actual CLI and local Git on disposable synthetic fixtures. No upstream provider, native client, or performance benchmark.",
+  "checks": 39,
+  "passed": true,
+  "results": [
+    {
+      "check": "empty status",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "NOT_CONFIGURED",
+      "actual_status": "NOT_CONFIGURED",
+      "passed": true
+    },
+    {
+      "check": "local import preview",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "PREVIEW",
+      "actual_status": "PREVIEW",
+      "passed": true
+    },
+    {
+      "check": "Git acquisition preview",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "PREVIEW",
+      "actual_status": "PREVIEW",
+      "passed": true
+    },
+    {
+      "check": "opensrc acquisition preview no provider",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "PREVIEW",
+      "actual_status": "PREVIEW",
+      "passed": true
+    },
+    {
+      "check": "floating Git ref blocked",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "actual local Git exact snapshot",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "RECORDED",
+      "actual_status": "RECORDED",
+      "passed": true
+    },
+    {
+      "check": "registered status",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "REGISTERED",
+      "actual_status": "REGISTERED",
+      "passed": true
+    },
+    {
+      "check": "inspect exact identity",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": null,
+      "actual_status": null,
+      "passed": true
+    },
+    {
+      "check": "bounded source search",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "OK",
+      "actual_status": "OK",
+      "passed": true
+    },
+    {
+      "check": "exact source read",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "OK",
+      "actual_status": "OK",
+      "passed": true
+    },
+    {
+      "check": "untrusted instructions read as data",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "OK",
+      "actual_status": "OK",
+      "passed": true
+    },
+    {
+      "check": "path traversal rejected",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "outside Git metadata rejected",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "unknown source rejected",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "graph preview no package invocation",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "PREVIEW",
+      "actual_status": "PREVIEW",
+      "passed": true
+    },
+    {
+      "check": "absent graph rejected",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "review required binding blocked",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "exploratory binding",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": null,
+      "actual_status": null,
+      "passed": true
+    },
+    {
+      "check": "mapping record preview",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "PREVIEW",
+      "actual_status": "PREVIEW",
+      "passed": true
+    },
+    {
+      "check": "mapping record in disposable fixture",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "RECORDED",
+      "actual_status": "RECORDED",
+      "passed": true
+    },
+    {
+      "check": "reviewed local binding",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": null,
+      "actual_status": null,
+      "passed": true
+    },
+    {
+      "check": "stale expected review rejected",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "refuse overwrite registered source",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "restore refuses existing cache",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "missing snapshot stale status",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "STALE",
+      "actual_status": "STALE",
+      "passed": true
+    },
+    {
+      "check": "restore preview",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "PREVIEW",
+      "actual_status": "PREVIEW",
+      "passed": true
+    },
+    {
+      "check": "exact cache restore",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "RESTORED",
+      "actual_status": "RESTORED",
+      "passed": true
+    },
+    {
+      "check": "restored read",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "OK",
+      "actual_status": "OK",
+      "passed": true
+    },
+    {
+      "check": "modified source blocked",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "modified source reported stale",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "STALE",
+      "actual_status": "STALE",
+      "passed": true
+    },
+    {
+      "check": "modified mapping blocked",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "import source remains unverified",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "RECORDED",
+      "actual_status": "RECORDED",
+      "passed": true
+    },
+    {
+      "check": "verification against wrong commit blocked",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "byte equality with Git snapshot",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": "VERIFIED_SNAPSHOT",
+      "actual_status": "VERIFIED_SNAPSHOT",
+      "passed": true
+    },
+    {
+      "check": "identity verified but mapping not inferred",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": null,
+      "actual_status": null,
+      "passed": true
+    },
+    {
+      "check": "optional executable missing no installer",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "upstream network not approved",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    },
+    {
+      "check": "seed_oss.py help",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": null,
+      "actual_status": null,
+      "passed": true
+    },
+    {
+      "check": "check_external_tools.py help",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "expected_status": null,
+      "actual_status": null,
+      "passed": true
+    }
+  ]
+}

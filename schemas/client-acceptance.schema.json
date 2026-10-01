@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:seed:client-acceptance:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "client",
+    "client_version",
+    "scenarios"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "client": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "client_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status",
+          "note",
+          "evidence_sha256"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "ambiguous-intake",
+              "bounded-change",
+              "reuse-before-browser",
+              "stale-scope",
+              "governed-denial",
+              "skill-retirement",
+              "mcp-source-semantics",
+              "resume-selected-plan",
+              "verification-before-completion"
+            ]
+          },
+          "status": {
+            "enum": [
+              "NOT_RUN",
+              "BLOCKED",
+              "PASS",
+              "FAIL",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 2000
+          },
+          "evidence_sha256": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

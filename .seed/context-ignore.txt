@@ -1,0 +1,5 @@
+# Globs relative to repository root. Built-in private/secret exclusions also apply.
+# This is NOT a full gitignore implementation. Review index contents before connecting a client.
+validation/**
+evals/**
+# Add raw proprietary or sensitive locations explicitly. Never index .env or credentials.

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "checks": [
+    {
+      "id": "setup",
+      "description": "Install pinned/locked dependencies for the selected stack",
+      "argv": null,
+      "cwd": ".",
+      "timeout_seconds": 900,
+      "not_applicable": null
+    },
+    {
+      "id": "static",
+      "description": "Lint, formatting, types, module boundaries, docs/contracts and workflow lint",
+      "argv": null,
+      "cwd": ".",
+      "timeout_seconds": 900,
+      "not_applicable": null
+    },
+    {
+      "id": "unit",
+      "description": "Unit tests with meaningful assertions",
+      "argv": null,
+      "cwd": ".",
+      "timeout_seconds": 900,
+      "not_applicable": null
+    },
+    {
+      "id": "integration",
+      "description": "Integration and contract tests against isolated dependencies",
+      "argv": null,
+      "cwd": ".",
+      "timeout_seconds": 900,
+      "not_applicable": null
+    },
+    {
+      "id": "browser",
+      "description": "Real UI flow, accessibility and console/network checks when UI exists",
+      "argv": null,
+      "cwd": ".",
+      "timeout_seconds": 900,
+      "not_applicable": null
+    },
+    {
+      "id": "build",
+      "description": "Production build/package creation without publishing",
+      "argv": null,
+      "cwd": ".",
+      "timeout_seconds": 900,
+      "not_applicable": null
+    },
+    {
+      "id": "security",
+      "description": "Secrets/dependency/static security checks appropriate to this repository",
+      "argv": null,
+      "cwd": ".",
+      "timeout_seconds": 900,
+      "not_applicable": null
+    },
+    {
+      "id": "ai-evals",
+      "description": "Relevant safety, workflow, retrieval and model regression evaluation when applicable",
+      "argv": null,
+      "cwd": ".",
+      "timeout_seconds": 900,
+      "not_applicable": null
+    }
+  ]
+}

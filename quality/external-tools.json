@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "opensrc": {
+    "package": "opensrc",
+    "version": "0.7.3",
+    "reviewed_source": "https://github.com/vercel-labs/opensrc",
+    "source_commit": "b51de60867e806da1839b33dd29c29424f12521b",
+    "integration": "path --verbose in a private OPENSRC_HOME; mapping remains UNVERIFIED",
+    "runtime_verification": "NOT_RUN"
+  },
+  "graphify": {
+    "package": "graphifyy",
+    "version": "0.9.65",
+    "reviewed_source": "https://github.com/Graphify-Labs/graphify",
+    "source_commit": "20a20d30d8e7eef77675651f0199d87f913bd3e7",
+    "integration": "graphify.extract.extract with explicit paths/root/cache_root, parallel=False; no semantic pipeline",
+    "runtime_verification": "NOT_RUN"
+  },
+  "policy": "Pinned adapter targets, not claims that released artifacts have been installed or certified. Version strings are not supply-chain attestations. Update with compatibility and real-provider checks."
+}

@@ -1,0 +1,11 @@
+{
+  "kind": "builtin",
+  "implementation": "regex-email",
+  "max_cases": 100,
+  "candidate": "baseline",
+  "configuration": {
+    "implementation": "regex-email",
+    "version": "1",
+    "network": false
+  }
+}

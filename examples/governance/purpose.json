@@ -1,0 +1,24 @@
+{
+  "id": "local-tool.v1",
+  "desired_outcome": "Accurate local file processing with minimal setup.",
+  "hard_constraints": [
+    "Do not transmit files externally",
+    "Do not overwrite input files without authorization"
+  ],
+  "preferences": [
+    "Prefer existing standard-library functionality"
+  ],
+  "non_goals": [
+    "Accounts",
+    "Website",
+    "Marketing campaign"
+  ],
+  "decision_scenarios": [
+    {
+      "id": "private-upload",
+      "situation": "A cloud parser would make the implementation shorter.",
+      "expected_decision": "Reject external upload unless the user changes the approved privacy scope.",
+      "why": "Hard constraints outrank convenience."
+    }
+  ]
+}

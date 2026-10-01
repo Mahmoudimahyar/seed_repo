@@ -1,0 +1,22 @@
+{
+  "id": "sample-choice.v1",
+  "workflow_id": "repository-read.v1",
+  "recorded_at": "2026-09-20T00:00:00Z",
+  "decision": "Propose local read-only retrieval for this synthetic example.",
+  "evidence_refs": [
+    "examples/governance/README.md"
+  ],
+  "policy_version": "1.0.0",
+  "policy_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "scope": "Synthetic documentation example only",
+  "authority": {
+    "kind": "policy",
+    "actor": "example-maintainer",
+    "evidence_reference": "Synthetic; no actual authorization"
+  },
+  "exception": false,
+  "expires_at": null,
+  "outcome": "proposed",
+  "observed_result_reference": null,
+  "supersedes": null
+}

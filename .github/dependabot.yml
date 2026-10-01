@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      compatible-actions:
+        update-types:
+          - minor
+          - patch
+# Add actual application manifest/lockfile directories after inspecting the stack.
+# No automatic major-version or security-waiver approval is configured here.
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3

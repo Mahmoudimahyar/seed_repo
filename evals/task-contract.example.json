@@ -1,0 +1,32 @@
+{
+  "id": "organization-extraction.v1",
+  "status": "design-example-not-implemented",
+  "input_distribution": "Define language, source, format, sensitivity, and limits",
+  "candidates": [
+    "rules-or-parser",
+    "specialized-extractor",
+    "small-llm",
+    "strong-llm"
+  ],
+  "metrics": [
+    "span-and-type-precision",
+    "span-and-type-recall",
+    "record-accuracy",
+    "coverage",
+    "critical-errors",
+    "cost",
+    "p95-latency"
+  ],
+  "labels": {
+    "verified_release_data": null,
+    "machine_consensus": "provisional-only",
+    "agreement_audits_required": true
+  },
+  "promotion": {
+    "mode": "reviewed",
+    "automatic_promotion": false,
+    "rollback_required": true
+  },
+  "thresholds": null,
+  "runner": null
+}

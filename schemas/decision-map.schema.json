@@ -1,0 +1,96 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+    },
+    "destination": {
+      "type": "string",
+      "minLength": 15,
+      "maxLength": 2000,
+      "pattern": "\\S"
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 15,
+      "maxLength": 2000,
+      "pattern": "\\S"
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 400,
+        "pattern": "\\S"
+      },
+      "minItems": 0,
+      "maxItems": 40,
+      "uniqueItems": true
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 400,
+        "pattern": "\\S"
+      },
+      "minItems": 0,
+      "maxItems": 40,
+      "uniqueItems": true
+    },
+    "fog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 600,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "id",
+          "description"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "max_parallel_claims": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 16
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "destination",
+    "scope",
+    "constraints",
+    "exclusions",
+    "fog",
+    "max_parallel_claims"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "decision-map"
+}

@@ -1,0 +1,16 @@
+{
+  ".claude/skills/seed-debug/SKILL.md": "7cf8442f01d7e447747acc13cf1671a83f7de01ba8448da9be82a51c693b2041",
+  ".claude/skills/seed-design/SKILL.md": "18dabf7a6c01ac1fdf8ee066d2f3ea7019d83e76832e0da9f30f5c1ecd94504e",
+  ".claude/skills/seed-discovery/SKILL.md": "fda4a7317e7655504b0d096a00477631fd0d3f014244068b8b29f260cae2bcb3",
+  ".claude/skills/seed-evaluate/SKILL.md": "3e04503b7b34afe3a1ed385b7e10cbb59b7b6db5ff3d8520938a0fba6e599283",
+  ".claude/skills/seed-github-delivery/SKILL.md": "40f7ff27541d6a9dbde9baee233b1250d77efa1b93fe1af989db45ce761fe3da",
+  ".claude/skills/seed-govern/SKILL.md": "8bcdb92e10279f4216f98636b077b867a58138277285040e03dd2d81ccc06de3",
+  ".claude/skills/seed-implement/SKILL.md": "db9ea98b83a2f6d3fc1a9fa4d7b6c71703ff4c4423acdfafe9cda8ec02d3ec83",
+  ".claude/skills/seed-improve/SKILL.md": "0156ff744f743d91a2aa23edca363012f52613648480242cce58b676b2275ea8",
+  ".claude/skills/seed-plan-review/SKILL.md": "8043018abd30a3b8ac56d3a357d23f6ca4d50a2e1070449d7c3927279d2d17db",
+  ".claude/skills/seed-recover/SKILL.md": "09e3ce967121a5c3f261bfcafb550fd4a6b96ce697ed711d1d9deece5264778e",
+  ".claude/skills/seed-research-reuse/SKILL.md": "c5657f08014e7d2446be423c263bc55473a07a695d32f6f4c52617ac1eec5800",
+  ".claude/skills/seed-simplify/SKILL.md": "4d3c339f63586766aa37224b2126c81d8e3bfc3ee530925d845232b1e266dc46",
+  ".claude/skills/seed-verify/SKILL.md": "15d07d8d88b2ff436d7bf205a169a96c282a3b125668a8c2bd6d08ac2eda7aa0",
+  ".claude/skills/seed-wayfind/SKILL.md": "2d89ce59c7a5c53bed32e54e8da0cc09b9ef06bfd748c6ff27377c3277a553b9"
+}

@@ -1,0 +1,5 @@
+# Optional research tooling ONLY. Install after review, preferably into a separate venv.
+# Public package is graphifyy; Seed calls its pinned AST library, not `graphify install`.
+# Direct pin; transitive dependencies are resolved by pip, NOT hash-locked here.
+# No SQL/media/LLM extras are requested. See docs/workflows/external-source-research.md.
+graphifyy==0.9.65

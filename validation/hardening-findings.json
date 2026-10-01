@@ -1,0 +1,115 @@
+{
+  "release": "0.3.1-rc.1",
+  "baseline": "0.3.0-rc.1",
+  "findings": [
+    {
+      "id": "F01",
+      "title": "Public exporter includes Git-ignored machine-local Codex configuration",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F02",
+      "title": "Task integrity incorrectly uses retrieval file selection",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F03",
+      "title": "Workflow governance is a standalone helper, not an integrated contract check",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F04",
+      "title": "Application scope approval is not a separate required CI acceptance gate",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F05",
+      "title": "Active feature flows are not automatically registered in readiness bindings",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F06",
+      "title": "Candidate execution drops abstention before scoring",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F07",
+      "title": "Promotion screening silently ignores unsupported coverage policy",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F08",
+      "title": "Scored outputs are not bound to the generating candidate run",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F09",
+      "title": "Skill retirement leaves stale Claude instructions discoverable",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F10",
+      "title": "Python indexing loses top-level code outside symbol previews",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F11",
+      "title": "Containment relationships and duplicate context crowd out useful evidence",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F12",
+      "title": "Source-read response has no practical character budget",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F13",
+      "title": "CI profiles conflate maintainer coverage with downstream optionality",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F14",
+      "title": "Task schema rejects valid repeated command arguments",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F15",
+      "title": "External candidate timeout leaves child processes running",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F16",
+      "title": "Phase and activation information can be stale or incomplete",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F17",
+      "title": "Current navigation documents contradict the shipped implementation",
+      "status": "LOCAL_FIX_TESTED",
+      "details": "docs/integration-hardening.md"
+    },
+    {
+      "id": "F18",
+      "title": "Presence and unit tests do not verify native skill use or end-to-end outcomes",
+      "status": "LOCAL_CHECKERS_IMPLEMENTED_EXTERNAL_NOT_RUN",
+      "details": "docs/integration-hardening.md"
+    }
+  ],
+  "interpretation": "Local regression coverage is not an independent security audit, authenticated approval or hosted/native-client certification."
+}

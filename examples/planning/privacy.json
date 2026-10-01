@@ -1,0 +1,24 @@
+{
+  "id": "privacy",
+  "question": "May any document contents leave the local device?",
+  "resolver": "interview",
+  "priority": 1,
+  "priority_reason": "Privacy constrains viable parser implementations.",
+  "depends_on": [],
+  "required_evidence": [
+    "examples/planning/source.md"
+  ],
+  "evidence_requirements": [
+    "Obtain the named owner's explicit answer for the defined scope."
+  ],
+  "authority": {
+    "mode": "human_required",
+    "owner": "example-owner",
+    "policy_ref": "examples/planning/policy.md"
+  },
+  "workflow_contract": null,
+  "budgets": {
+    "max_minutes": 10,
+    "max_cost_usd": 0
+  }
+}

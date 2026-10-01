@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "documentation_only": {
+    "reason": "Allow discovery prose and its local records before build approval; no application, dependency, evaluator, workflow or permission changes.",
+    "roots": ["docs/project/", "docs/features/"],
+    "files": ["docs/project/readiness.json", "docs/project/features.json"]
+  }
+}

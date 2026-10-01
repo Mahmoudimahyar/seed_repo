@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "min_accuracy": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "min_accuracy_lower_95": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "min_slice_accuracy": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "min_coverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "min_cases": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "max_regressions": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_p95_latency_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "max_total_cost_usd": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "min_accuracy",
+    "min_accuracy_lower_95",
+    "min_slice_accuracy",
+    "min_coverage",
+    "min_cases",
+    "max_regressions",
+    "max_p95_latency_ms",
+    "max_total_cost_usd"
+  ],
+  "additionalProperties": false
+}

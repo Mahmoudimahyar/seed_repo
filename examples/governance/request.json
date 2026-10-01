@@ -1,0 +1,14 @@
+{
+  "workflow_id": "repository-read.v1",
+  "action": "read_source",
+  "paths": [
+    "docs/README.md"
+  ],
+  "hosts": [],
+  "mutates": false,
+  "calls_used": 0,
+  "elapsed_seconds": 0,
+  "cost_usd": 0,
+  "projected_cost_usd": 0,
+  "approval": null
+}

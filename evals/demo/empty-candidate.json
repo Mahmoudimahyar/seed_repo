@@ -1,0 +1,11 @@
+{
+  "kind": "builtin",
+  "implementation": "empty",
+  "max_cases": 100,
+  "candidate": "empty",
+  "configuration": {
+    "implementation": "empty",
+    "version": "1",
+    "network": false
+  }
+}

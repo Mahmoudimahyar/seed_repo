@@ -1,0 +1,23 @@
+{
+  "id": "__FILL__",
+  "workflow_id": "repository-read.v1",
+  "human_owner": "project-maintainer",
+  "sources": [
+    {
+      "id": "approved-files",
+      "source_of_truth": "Current approved repository checkout",
+      "purpose": "Targeted context retrieval",
+      "classification": "internal",
+      "fields": [
+        "source excerpts",
+        "file paths"
+      ],
+      "access": "read",
+      "allowed_recipients": [],
+      "retention_days": 7,
+      "training_allowed": false,
+      "terms_reference": "Project access policy",
+      "dispute_owner": "project-maintainer"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+---
+description: Seed Repo entry point and evidence policy
+alwaysApply: true
+---
+Read AGENTS.md for repository policy. Use START_HERE.md for onboarding.
+Do not assume MCP tools or application tests exist. Verify what actually runs.

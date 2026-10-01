@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "__FILL__",
+  "destination": "Specify a local document organizer without inventing a hosted SaaS.",
+  "scope": "Resolve privacy and parser choices for a synthetic CLI example only.",
+  "constraints": [
+    "No production actions and no document upload to external services."
+  ],
+  "exclusions": [
+    "Marketing, sales, billing and a website are not requested."
+  ],
+  "fog": [
+    {
+      "id": "collaboration",
+      "description": "Future collaboration is too imprecise and outside the current release decision."
+    }
+  ],
+  "max_parallel_claims": 1
+}

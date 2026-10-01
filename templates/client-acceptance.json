@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "client": "select-the-actual-client",
+  "client_version": "record-the-installed-version",
+  "scenarios": [
+    {
+      "id": "ambiguous-intake",
+      "status": "NOT_RUN",
+      "note": "Not exercised in an installed client. Fill only after observing the actual outcome.",
+      "evidence_sha256": {}
+    },
+    {
+      "id": "bounded-change",
+      "status": "NOT_RUN",
+      "note": "Not exercised in an installed client. Fill only after observing the actual outcome.",
+      "evidence_sha256": {}
+    },
+    {
+      "id": "reuse-before-browser",
+      "status": "NOT_RUN",
+      "note": "Not exercised in an installed client. Fill only after observing the actual outcome.",
+      "evidence_sha256": {}
+    },
+    {
+      "id": "stale-scope",
+      "status": "NOT_RUN",
+      "note": "Not exercised in an installed client. Fill only after observing the actual outcome.",
+      "evidence_sha256": {}
+    },
+    {
+      "id": "governed-denial",
+      "status": "NOT_RUN",
+      "note": "Not exercised in an installed client. Fill only after observing the actual outcome.",
+      "evidence_sha256": {}
+    },
+    {
+      "id": "skill-retirement",
+      "status": "NOT_RUN",
+      "note": "Not exercised in an installed client. Fill only after observing the actual outcome.",
+      "evidence_sha256": {}
+    },
+    {
+      "id": "mcp-source-semantics",
+      "status": "NOT_RUN",
+      "note": "Not exercised in an installed client. Fill only after observing the actual outcome.",
+      "evidence_sha256": {}
+    },
+    {
+      "id": "resume-selected-plan",
+      "status": "NOT_RUN",
+      "note": "Not exercised in an installed client. Fill only after observing the actual outcome.",
+      "evidence_sha256": {}
+    },
+    {
+      "id": "verification-before-completion",
+      "status": "NOT_RUN",
+      "note": "Not exercised in an installed client. Fill only after observing the actual outcome.",
+      "evidence_sha256": {}
+    }
+  ]
+}

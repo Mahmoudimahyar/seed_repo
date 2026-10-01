@@ -1,0 +1,31 @@
+{
+  "id": "parser",
+  "question": "Which existing local parser handles the required input formats?",
+  "resolver": "research",
+  "priority": 2,
+  "priority_reason": "Reuse a suitable library rather than building a parser.",
+  "depends_on": [
+    {
+      "ticket_id": "privacy",
+      "allowed_outcomes": [
+        "accepted"
+      ]
+    }
+  ],
+  "required_evidence": [
+    "examples/planning/source.md"
+  ],
+  "evidence_requirements": [
+    "Compare supported formats, licenses and failure cases using primary sources and a scoped test."
+  ],
+  "authority": {
+    "mode": "human_required",
+    "owner": "example-owner",
+    "policy_ref": "examples/planning/policy.md"
+  },
+  "workflow_contract": null,
+  "budgets": {
+    "max_minutes": 10,
+    "max_cost_usd": 0
+  }
+}

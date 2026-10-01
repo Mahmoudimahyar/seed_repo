@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "checks": [
+    {
+      "id": "integrity",
+      "description": "Starter documentation, configuration, skill and privacy-shape checks; not a full security audit",
+      "argv": [
+        "{python}",
+        "scripts/seed.py",
+        "validate"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 120,
+      "not_applicable": null
+    },
+    {
+      "id": "tests",
+      "description": "Seed Repo tooling tests only; not generated-application acceptance",
+      "argv": [
+        "{python}",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-v"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 900,
+      "not_applicable": null
+    }
+  ]
+}

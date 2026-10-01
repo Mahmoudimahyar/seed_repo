@@ -1,0 +1,109 @@
+name: Seed CI
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review, edited]
+  merge_group:
+    types: [checks_requested]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: seed-ci-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  checks:
+    name: seed-checks (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2022, macos-14]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version-file: .python-version
+      - name: Install pinned schema-test dependency
+        run: python -m pip install -r requirements-dev.txt
+      - name: Check PR title without shell interpolation
+        if: github.event_name == 'pull_request'
+        env:
+          SEED_PR_TITLE: ${{ github.event.pull_request.title }}
+        run: python scripts/seed_ci.py --check-pr-title
+      - name: Run retained starter and applicable project checks
+        run: python scripts/seed_ci.py --profile --config quality/seed-checks.json
+      - name: Retain check evidence, not release artifacts
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: seed-evidence-${{ matrix.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .seed-ci-artifacts/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 7
+  mcp:
+    name: seed-mcp-protocol
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version-file: .python-version
+      - name: Determine explicit MCP applicability
+        id: profile
+        run: python scripts/seed_ci.py --profile-info --github-output
+      - name: Record optional integration omission
+        if: steps.profile.outputs.mcp_required == 'false'
+        run: echo "NOT_APPLICABLE per the reviewed project applicability record; not a skipped required test."
+      - name: Install official MCP adapter dependencies
+        if: steps.profile.outputs.mcp_required == 'true' 
+        run: python -m pip install -r requirements-mcp.txt
+      - name: Index this checkout
+        if: steps.profile.outputs.mcp_required == 'true'
+        run: python scripts/seed_context.py index
+      - name: Validate actual SDK protocol
+        if: steps.profile.outputs.mcp_required == 'true'
+        run: python scripts/check_mcp.py
+  scope:
+    name: seed-scope-acceptance
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version-file: .python-version
+      - run: python -m pip install -r requirements-governance.txt
+      - name: Verify applicable recorded scope independently from technical checks
+        run: python scripts/seed_acceptance.py --ci
+  required:
+    name: seed-ci-required
+    if: always()
+    needs: [checks, mcp, scope]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Reject failed, skipped, or cancelled matrix results
+        shell: bash
+        env:
+          CHECKS_RESULT: ${{ needs.checks.result }}
+          MCP_RESULT: ${{ needs.mcp.result }}
+          SCOPE_RESULT: ${{ needs.scope.result }}
+        run: test "$CHECKS_RESULT" = success && test "$MCP_RESULT" = success && test "$SCOPE_RESULT" = success
+# Protect seed-ci-required in GitHub settings after a real run exists.
+# No path filters that leave required checks pending; no production/model secrets here.
+# Profiles retain starter regressions; application technical checks and recorded scope are separate.
+# Protected workflow ownership is required. This repository cannot authenticate its own approver.
+# After initialization, configure actual app checks and adapt the platform matrix to its support policy.

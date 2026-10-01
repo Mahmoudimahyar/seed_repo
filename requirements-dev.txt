@@ -1,0 +1,2 @@
+-r requirements-governance.txt
+# MCP protocol integration tests additionally require requirements-mcp.txt.

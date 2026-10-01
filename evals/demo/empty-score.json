@@ -1,0 +1,9 @@
+{
+  "candidate": "empty",
+  "configuration": {
+    "implementation": "empty",
+    "version": "1",
+    "network": false
+  },
+  "scorer": "entities"
+}

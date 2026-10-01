@@ -1,0 +1,8 @@
+{
+  "release": "0.4.0-rc.1",
+  "suite": 445,
+  "external_cli_checks": 39,
+  "status": "PASS",
+  "evidence": "external-source-checks.json",
+  "note": "See separate extracted-release verification for the final archived bytes; no installed external-provider verification inferred."
+}

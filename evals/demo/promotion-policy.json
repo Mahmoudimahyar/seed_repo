@@ -1,0 +1,10 @@
+{
+  "min_cases": 100,
+  "min_accuracy": 0.99,
+  "min_accuracy_lower_95": 0.95,
+  "max_regressions": 0,
+  "max_p95_latency_ms": 1000,
+  "max_total_cost_usd": 1,
+  "min_slice_accuracy": 0.95,
+  "min_coverage": 0.99
+}

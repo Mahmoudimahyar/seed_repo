@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-09-22T03:12:14.391545+00:00",
+  "source_sha": null,
+  "working_tree_dirty": null,
+  "github_run_id": null,
+  "checks": [
+    {
+      "id": "integrity",
+      "argv": [
+        "{python}",
+        "scripts/seed.py",
+        "validate"
+      ],
+      "cwd": ".",
+      "log": ".seed-ci-artifacts/integrity.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 1.487
+    },
+    {
+      "id": "tests",
+      "argv": [
+        "{python}",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-v"
+      ],
+      "cwd": ".",
+      "log": ".seed-ci-artifacts/tests.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 66.883
+    }
+  ],
+  "evidence_scope": "Command execution report, not independent attestation or proof of test adequacy",
+  "config_sha256": "3f4d91f6268013fff1cd2f5eb448cf24a7162058eddd8527c0355b442e2a94f8",
+  "status": "PASS",
+  "source_fingerprint": "05237693a5bd94e12e5bfe578c97757a9490da3af4503430a60c8b61745c0ed0"
+}

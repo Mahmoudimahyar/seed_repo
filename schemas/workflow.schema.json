@@ -1,0 +1,263 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "human_owner": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "executor": {
+      "enum": [
+        "deterministic",
+        "specialized_model",
+        "llm",
+        "agent",
+        "human"
+      ]
+    },
+    "autonomy": {
+      "enum": [
+        "read_only",
+        "bounded_write",
+        "approval_required"
+      ]
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "read_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "write_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "network_hosts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "actions",
+        "read_paths",
+        "write_paths",
+        "network_hosts"
+      ],
+      "additionalProperties": false
+    },
+    "budgets": {
+      "type": "object",
+      "properties": {
+        "max_calls": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000
+        },
+        "max_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 86400
+        },
+        "max_cost_usd": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "max_calls",
+        "max_seconds",
+        "max_cost_usd"
+      ],
+      "additionalProperties": false
+    },
+    "hard_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "memory_boundary": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "data_manifest": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "evaluation_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "escalation": {
+      "type": "object",
+      "properties": {
+        "owner": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "queue_capacity": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "on_timeout": {
+          "enum": [
+            "block",
+            "abort"
+          ]
+        }
+      },
+      "required": [
+        "owner",
+        "queue_capacity",
+        "timeout_seconds",
+        "on_timeout"
+      ],
+      "additionalProperties": false
+    },
+    "telemetry": {
+      "type": "object",
+      "properties": {
+        "event_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "retention_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "secret_values": {
+          "enum": [
+            "never"
+          ]
+        }
+      },
+      "required": [
+        "event_fields",
+        "retention_days",
+        "secret_values"
+      ],
+      "additionalProperties": false
+    },
+    "recovery": {
+      "type": "object",
+      "properties": {
+        "stop_file": {
+          "const": ".seed-local/STOP"
+        },
+        "compensation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "rollback_reference": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "stop_file",
+        "compensation",
+        "rollback_reference"
+      ],
+      "additionalProperties": false
+    },
+    "reusability_scope": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "purpose_ref": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "human_owner",
+    "purpose",
+    "executor",
+    "autonomy",
+    "permissions",
+    "budgets",
+    "hard_constraints",
+    "memory_boundary",
+    "data_manifest",
+    "evaluation_refs",
+    "escalation",
+    "telemetry",
+    "recovery",
+    "reusability_scope"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "workflow"
+}

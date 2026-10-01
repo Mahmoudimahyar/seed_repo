@@ -1,0 +1,8 @@
+# Example only. Not active until renamed CODEOWNERS and real identities are supplied.
+# * @YOUR_ACCOUNT_OR_TEAM
+# /.github/ @YOUR_PLATFORM_TEAM
+# /scripts/ @YOUR_PLATFORM_TEAM
+# /AGENTS.md @YOUR_PLATFORM_TEAM
+# /.agents/ @YOUR_PLATFORM_TEAM
+# /evals/ @YOUR_EVALUATION_TEAM
+# Multiple owners on one line do not require all of them to approve.

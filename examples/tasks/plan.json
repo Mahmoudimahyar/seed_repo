@@ -1,0 +1,38 @@
+{
+  "id": "starter-inspection",
+  "owner": "maintainer",
+  "scope": "Run local read-only starter checks as a demo.",
+  "approved": false,
+  "approval_evidence": "examples/tasks/README.md",
+  "allowed_edit_paths": [
+    "validation/**"
+  ],
+  "max_steps_per_run": 1,
+  "max_attempts_per_task": 2,
+  "tasks": [
+    {
+      "id": "doctor",
+      "depends_on": [],
+      "argv": [
+        "{python}",
+        "scripts/seed.py",
+        "doctor"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 30
+    },
+    {
+      "id": "integrity",
+      "depends_on": [
+        "doctor"
+      ],
+      "argv": [
+        "{python}",
+        "scripts/seed.py",
+        "validate"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 60
+    }
+  ]
+}

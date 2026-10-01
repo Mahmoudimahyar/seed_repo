@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "feature_id": "export",
+  "command": {
+    "argv": [
+      "{python}",
+      "-m",
+      "pytest",
+      "tests/test_export.py",
+      "--junitxml={junit}"
+    ],
+    "cwd": ".",
+    "timeout_seconds": 120
+  },
+  "requirements": [
+    {
+      "id": "REQ-export-001",
+      "method": "automated",
+      "tests": [
+        "tests.test_export::test_preserves_destination"
+      ],
+      "reason": "Check existing destination bytes are unchanged when overwrite is not authorized."
+    }
+  ]
+}

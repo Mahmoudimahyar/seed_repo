@@ -1,0 +1,9 @@
+{
+  "candidate": "baseline",
+  "configuration": {
+    "implementation": "regex-email",
+    "version": "1",
+    "network": false
+  },
+  "scorer": "entities"
+}

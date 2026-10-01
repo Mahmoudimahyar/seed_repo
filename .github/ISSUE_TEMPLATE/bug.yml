@@ -1,0 +1,30 @@
+name: Reproducible bug
+description: Report a defect in the starter or its documentation, not a private vulnerability.
+title: "bug: "
+body:
+  - type: markdown
+    attributes:
+      value: "Do not post vulnerabilities, credentials, private documents, or unredacted logs. Follow SECURITY.md for private reporting."
+  - type: input
+    id: version
+    attributes:
+      label: Starter version, OS, Python and client version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include exact commands and whether this is a fresh template or initialized project.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence and checks not run

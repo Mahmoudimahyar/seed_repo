@@ -1,0 +1,54 @@
+{
+  "id": "__FILL__",
+  "version": "1.0.0",
+  "human_owner": "project-maintainer",
+  "purpose": "Read approved repository evidence without altering source or contacting a network.",
+  "executor": "deterministic",
+  "autonomy": "read_only",
+  "permissions": {
+    "actions": [
+      "read_source"
+    ],
+    "read_paths": [
+      "docs/**",
+      "src/**"
+    ],
+    "write_paths": [],
+    "network_hosts": []
+  },
+  "budgets": {
+    "max_calls": 100,
+    "max_seconds": 600,
+    "max_cost_usd": 0
+  },
+  "hard_constraints": [
+    "No secret-file access",
+    "No external transmission"
+  ],
+  "memory_boundary": "Repository-local derived index; no cross-project collection.",
+  "data_manifest": "examples/governance/data-access.json",
+  "evaluation_refs": [
+    "scripts/tests/test_governance.py"
+  ],
+  "escalation": {
+    "owner": "project-maintainer",
+    "queue_capacity": 10,
+    "timeout_seconds": 3600,
+    "on_timeout": "block"
+  },
+  "telemetry": {
+    "event_fields": [
+      "workflow_id",
+      "action",
+      "status"
+    ],
+    "retention_days": 7,
+    "secret_values": "never"
+  },
+  "recovery": {
+    "stop_file": ".seed-local/STOP",
+    "compensation": "Read-only workflow has no external side effects.",
+    "rollback_reference": "docs/workflows/governance.md"
+  },
+  "reusability_scope": "Only this project; reassess permission and data manifests before reuse."
+}

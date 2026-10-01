@@ -1,0 +1,51 @@
+{
+  "release": "0.5.0-rc.1",
+  "date": "2026-10-01",
+  "stage": "pre-package local verification",
+  "baseline": {
+    "version": "0.4.0-rc.1",
+    "archive_sha256": "e2ecf9eec4718584d60f9273937c30193405592d57e42e3b3a8bb08ac7ecd5b3",
+    "tests": 445,
+    "status": "PASS",
+    "seconds": 96.52,
+    "log_sha256": "5071f78d233fbfa1e3a1e6fbbc3dfe0281d3c77a5ac77bdef72635ee64de4347"
+  },
+  "candidate_suite": {
+    "tests": 519,
+    "seconds": 128.024,
+    "status": "PASS",
+    "log_sha256": "2c8d1426349fc5a42d405321cc8c59afaf7f6b64c1ee4aac8c23c5a0d5c60a28",
+    "additional_tests": 74
+  },
+  "cli": {
+    "checks": 33,
+    "passed": 33,
+    "real_test_runner": "pytest 9.0.2",
+    "approvals_created": false,
+    "native_agents_or_providers_executed": false
+  },
+  "environment": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "jsonschema": "4.26.0",
+    "pytest": "9.0.2",
+    "git": "2.47.3"
+  },
+  "external": {
+    "official_mcp_transport": "BLOCKED: SDK unavailable",
+    "graphify": "BLOCKED: provider unavailable",
+    "opensrc": "BLOCKED: network not authorized/provider absent",
+    "hosted_github": "NOT_RUN",
+    "native_agents": "NOT_RUN",
+    "windows_macos": "NOT_RUN",
+    "live_model_evaluations": "NOT_RUN",
+    "production_deployment": "NOT_RUN",
+    "independent_security_audit": "NOT_RUN"
+  },
+  "boundaries": [
+    "Synthetic reports test protocol boundaries; actual pytest smoke validates one real reporter.",
+    "No authenticated production or project approval is claimed. No GitHub write action occurred.",
+    "Final ZIP hash and extracted-tree verification are published separately after packaging."
+  ],
+  "ci_summary_retention": "Covered by a regression: mapped results/hashes retained without raw stdout/stderr."
+}

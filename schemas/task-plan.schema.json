@@ -1,0 +1,289 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "approved": {
+      "type": "boolean"
+    },
+    "approval_evidence": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "allowed_edit_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "max_steps_per_run": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "max_attempts_per_task": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "argv": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[^\\u0000]*$"
+            },
+            "minItems": 1,
+            "prefixItems": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\u0000]+$"
+              }
+            ]
+          },
+          "cwd": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "timeout_seconds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3600
+          },
+          "governance": {
+            "type": "object",
+            "properties": {
+              "workflow": {
+                "type": "string",
+                "minLength": 1
+              },
+              "workflow_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "reference_sha256": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "minProperties": 1
+              },
+              "request": {
+                "type": "object",
+                "properties": {
+                  "workflow_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "action": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "paths": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "minItems": 0,
+                    "uniqueItems": true
+                  },
+                  "hosts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "minItems": 0,
+                    "uniqueItems": true
+                  },
+                  "mutates": {
+                    "type": "boolean"
+                  },
+                  "calls_used": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "elapsed_seconds": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "cost_usd": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "projected_cost_usd": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "approval": {
+                    "anyOf": [
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "by": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          },
+                          "request_sha256": {
+                            "type": "string",
+                            "pattern": "^[a-f0-9]{64}$"
+                          },
+                          "expires_at": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "evidence_path": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          }
+                        },
+                        "required": [
+                          "by",
+                          "request_sha256",
+                          "expires_at",
+                          "evidence_path"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  },
+                  "execution_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  }
+                },
+                "required": [
+                  "workflow_id",
+                  "action",
+                  "paths",
+                  "hosts",
+                  "mutates",
+                  "calls_used",
+                  "elapsed_seconds",
+                  "cost_usd",
+                  "projected_cost_usd",
+                  "approval",
+                  "execution_sha256"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "workflow",
+              "workflow_sha256",
+              "reference_sha256",
+              "request"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "depends_on",
+          "argv",
+          "cwd",
+          "timeout_seconds"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "readiness_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "require_governance": {
+      "type": "boolean"
+    },
+    "external_sources": {
+      "type": "array",
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+          },
+          "record_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "require_reviewed_mapping": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "record_sha256",
+          "require_reviewed_mapping"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "id",
+    "owner",
+    "scope",
+    "approved",
+    "approval_evidence",
+    "allowed_edit_paths",
+    "max_steps_per_run",
+    "max_attempts_per_task",
+    "tasks"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "task-plan"
+}
