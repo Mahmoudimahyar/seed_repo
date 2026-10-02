@@ -1,6 +1,6 @@
 # Optional official SDK maintenance line. Deliberately pinned rather than switching
 # to a new major implicitly. Re-evaluate advisories and compatibility before upgrades.
-mcp==1.28.1
+mcp==2.2.0
 
 # Read-only optional decision handoffs validate referenced workflow schemas.
 -r requirements-governance.txt
